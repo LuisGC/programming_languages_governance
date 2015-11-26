@@ -1,437 +1,1298 @@
-<!doctype html>
-
-<!--
-
-    Welcome to the light side of the source, young padawan.
-
-    One step closer to learn something interesting you are...
-
-                               ____                  
-                            _.' :  `._               
-                        .-.'`.  ;   .'`.-.           
-               __      / : ___\ ;  /___ ; \      __  
-             ,'_ ""=-.:__;".-.";: :".-.":__;.-="" _`,
-             :' `.t""=-.. '<@.`;_  ',@:` ..-=""j.' `;
-                  `:-.._J '-.-'L__ `-.-' L_..-;'     
-                    "-.__ ;  .-"  "-.  : __.-"       
-                        L ' /.======.\ ' J           
-                         "-.   "__"   .-"            
-                        __.l"-:_JL_;-";.__           
-                     .-j/'.;  ;""""  / .'\"-.        
-                   .' /:`. "-.:     .-" .';  `.      
-                .-"  / ;  "-. "-..-" .-"  :    "-.   
-             .+"-.  : :      "-.__.-"      ;-._   \  
-             ; \  `.; ;                    : : "+. ; 
-             :  ;   ; ;                    : ;  : \: 
-             ;  :   ; :                    ;:   ;  : 
-            : \  ;  :  ;                  : ;  /  :: 
-            ;  ; :   ; :                  ;   :   ;: 
-            :  :  ;  :  ;                : :  ;  : ; 
-            ;\    :   ; :                ; ;     ; ; 
-            : `."-;   :  ;              :  ;    /  ; 
-             ;    -:   ; :              ;  : .-"   : 
-             :\     \  :  ;            : \.-"      : 
-              ;`.    \  ; :            ;.'_..-=  / ; 
-              :  "-.  "-:  ;          :/."      .'  :
-               \         \ :          ;/  __        :
-                \       .-`.\        /t-""  ":-+.   :
-                 `.  .-"    `l    __/ /`. :  ; ; \  ;
-                   \   .-" .-"-.-"  .' .'j \  /   ;/ 
-                    \ / .-"   /.     .'.' ;_:'    ;  
-                     :-""-.`./-.'     /    `.___.'   
-                           \ `t  ._  /               
-                            "-.t-._:'                
-
--->
-
-<!--
-    
-    So you'd like to know how to use impress.js?
-    
-    You've made the first, very important step - you're reading the source code.
-    And that's how impress.js presentations are built - with HTML and CSS code.
-    
-    Believe me, you need quite decent HTML and CSS skills to be able to use impress.js effectively.
-    More importantly, you need to be a designer. There are no default styles or layouts for impress.js presentations.
-    
-    You need to design and build it by hand.
-    
-    So...
-    
-    Would you still like to know how to use impress.js?
-    
--->
-
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=1024" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
-    
-    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
-    <meta name="author" content="Bartek Szopka" />
-
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
-
-    <!--
-        
-        Impress.js doesn't depend on any external stylesheets. It adds all of the styles it needs for the
-        presentation to work.
-        
-        This style below contains styles only for demo presentation. Browse it to see how impress.js
-        classes are used to style presentation steps, or how to apply fallback styles, but I don't want
-        you to use them directly in your presentation.
-        
-        Be creative, build your own. We don't really want all impress.js presentations to look the same,
-        do we?
-        
-        When creating your own presentation get rid of this file. Start from scratch, it's fun!
-        
-    -->
-    <link href="css/impress-demo.css" rel="stylesheet" />
-    
-    <link rel="shortcut icon" href="favicon.png" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=1024" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	
+	<meta name="description" content="Concerning Governance in programming languages" />
+	<meta name="author" content="Luis García Castro" />
+	<meta name="keywords" content="Presentation, Open Source, Open, Free, Programming, Languages, Governance, Software" />  
+	<title>Concerning Governance in programming languages - Luis García Castro</title>
+	
+	<link rel="stylesheet" href="css/style.css"/>
 </head>
-
-<!--
-    
-    Body element is used by impress.js to set some useful class names, that will allow you to detect
-    the support and state of the presentation in CSS or other scripts.
-    
-    First very useful class name is `impress-not-supported`. This class means, that browser doesn't
-    support features required by impress.js, so you should apply some fallback styles in your CSS.
-    It's not necessary to add it manually on this element. If the script detects that browser is not
-    good enough it will add this class, but keeping it in HTML means that users without JavaScript
-    will also get fallback styles.
-    
-    When impress.js script detects that browser supports all required features, this class name will
-    be removed.
-    
-    The class name on body element also depends on currently active presentation step. More details about
-    it can be found later, when `hint` element is being described.
-    
--->
+	
 <body class="impress-not-supported">
 
-<!--
-    For example this fallback message is only visible when there is `impress-not-supported` class on body.
--->
 <div class="fallback-message">
-    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
-    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+	<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+	<p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
 </div>
 
-<!--
-    
-    Now that's the core element used by impress.js.
-    
-    That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
-    It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
-    
-    You probably won't need it now, but there are some configuration options that can be set on this element.
-    
-    To change the duration of the transition between slides use `data-transition-duration="2000"` giving it
-    a number of ms. It defaults to 1000 (1s).
-    
-    You can also control the perspective with `data-perspective="500"` giving it a number of pixels.
-    It defaults to 1000. You can set it to 0 if you don't want any 3D effects.
-    If you are willing to change this value make sure you understand how CSS perspective works:
-    https://developer.mozilla.org/en/CSS/perspective
-    
-    But as I said, you won't need it for now, so don't worry - there are some simple but interesting things
-    right around the corner of this tag ;)
-    
--->
 <div id="impress">
 
-    <!--
-        
-        Here is where interesting thing start to happen.
-        
-        Each step of the presentation should be an element inside the `#impress` with a class name
-        of `step`. These step elements are positioned, rotated and scaled by impress.js, and
-        the 'camera' shows them on each step of the presentation.
-        
-        Positioning information is passed through data attributes.
-        
-        In the example below we only specify x and y position of the step element with `data-x="-1000"`
-        and `data-y="-1500"` attributes. This means that **the center** of the element (yes, the center)
-        will be positioned in point x = -1000px and y = -1500px of the presentation 'canvas'.
-        
-        It will not be rotated or scaled.
-        
-    -->
-    <div id="bored" class="step slide" data-x="-1000" data-y="-1500">
-        <q>Aren't you just <b>bored</b> with all those slides-based presentations?</q>
-    </div>
+	<div id="title" class="step slide" data-x="22.6150850743117" data-y="15.7768628839531" data-z="-5113.56996737113" data-rotate-z="3.57626187102869" data-rotate-x="-12.6759949391708" data-rotate-y="18.0016787988134" data-scale="8">
+		<img src="img/programming-languages-cover.jpg" alt="Programming languages" class="img_back maxed_height blur" />
+		<div class="title">
+			<p><em>Concerning Governance<br/>in programming languages</em></p>
+		</div>
+		<div class="author">
+			<p>November 2015 <br /><em>Luis García Castro</em></p>
+		</div>
+		<div class="event_logo">
+			<img src="img/logos/Codemotion.png" alt="Codemotion logo" class="event_logo" />
+		</div>
+	</div>
 
-    <!--
-        
-        The `id` attribute of the step element is used to identify it in the URL, but it's optional.
-        If it is not defined, it will get a default value of `step-N` where N is a number of slide.
-        
-        So in the example below it'll be `step-2`.
-        
-        The hash part of the url when this step is active will be `#/step-2`.
-        
-        You can also use `#step-2` in a link, to point directly to this particular step.
-        
-        Please note, that while `#/step-2` (with slash) would also work in a link it's not recommended.
-        Using classic `id`-based links like `#step-2` makes these links usable also in fallback mode.
-        
-    -->
-    <div class="step slide" data-x="0" data-y="-1500">
-        <q>Don't you think that presentations given <strong>in modern browsers</strong> shouldn't <strong>copy the limits</strong> of 'classic' slide decks?</q>
-    </div>
+	<div id="overview" class="step" data-scale="14"></div>
 
-    <div class="step slide" data-x="1000" data-y="-1500">
-        <q>Would you like to <strong>impress your audience</strong> with <strong>stunning visualization</strong> of your talk?</q>
-    </div>
+	<div id="introduction" class="step slide" data-x="-254.162766527917" data-y="916.049226233706" data-z="-4969.52574293814" data-rotate-z="16.1215286417864" data-rotate-x="-1.74933639261872" data-rotate-y="-15.8497733892873" data-scale="1">
+		<div class="slide-title centered-title"><em>Introduction</em></div>
+		<div class="slide-content">
+			<p id="name">
+				<em>Luis García Castro</em>
+			</p>
+			<p>Software Engineer @ Sopra Steria</p>
+			<br />
+			<p id="twitter">
+				<img src="img/social/twitter.png" alt="Twitter" class="rounded_icon" />
+				<a href="https://twitter.com/luiyo">
+					<em>@luiyo</em>
+				</a>
+			</p>
+			<p id="gplus">
+				<img src="img/social/google-plus.png" alt="Google Plus" class="rounded_icon" />
+				<a href="https://plus.google.com/+LuisGarcíaCastro">
+					https://plus.google.com/+LuisGarcíaCastro
+				</a>
+			</p>
+			<p id="linkedin">
+				<img src="img/social/linkedin.png" alt="LinkedIn" class="rounded_icon" />
+				<a href="http://www.linkedin.com/in/LuisGC">
+					http://www.linkedin.com/in/LuisGC
+				</a>
+			</p>
+			<p id="github">
+				<img src="img/social/github.png" alt="GitHub" class="rounded_icon" />
+				<a href="https://github.com/LuisGC">
+					https://github.com/LuisGC
+				</a>
+			</p>
+			<br />
+			<p id="osmf">
+				<img src="img/logos/fsfe.png" alt="OpenStreetMap Foundation" class="rounded_icon" />
+				Proud member of the <a href="https://fsfe.org/"><em>Free Software Foundation Europe</em></a>
+			</p>
+			<p id="osm_profile">
+				<img src="img/logos/osmf.png" alt="OpenStreetMap Profile" class="rounded_icon" />
+				Proud member of the <a href="http://osmfoundation.org/"><em>Open Street Map Foundation</em></a>
+			</p>
+			<br />
 
-    <!--
-        
-        This is an example of step element being scaled.
-        
-        Again, we use a `data-` attribute, this time it's `data-scale="4"`, so it means that this
-        element will be 4 times larger than the others.
-        From presentation and transitions point of view it means, that it will have to be scaled
-        down (4 times) to make it back to its correct size.
-        
-    -->
-    <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
-        <span class="try">then you should try</span>
-        <h1>impress.js<sup>*</sup></h1>
-        <span class="footnote"><sup>*</sup> no rhyme intended</span>
-    </div>
+			<p id="openSource">
+				<img src="img/open-source-logo.png" alt="Impress.js" class="rounded_icon" />
+				<span class="footer"><i>Presentation made with the awesome Open Source tool <a href="https://github.com/bartaz/impress.js"><em>Impress.js</em></a></i></span>
+			</p>
+							
+		</div>
+	</div>
 
-    <!--
-        
-        This element introduces rotation.
-        
-        Notation shouldn't be a surprise. We use `data-rotate="90"` attribute, meaning that this
-        element should be rotated by 90 degrees clockwise.
-        
-    -->
-    <div id="its" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
-        <p>It's a <strong>presentation tool</strong> <br/>
-        inspired by the idea behind <a href="http://prezi.com">prezi.com</a> <br/>
-        and based on the <strong>power of CSS3 transforms and transitions</strong> in modern browsers.</p>
-    </div>
+	<div id="reasons" class="step slide" data-x="-1683.51876390898" data-y="92.712303845911" data-z="-4825.48151850515" data-rotate-z="9.49814334930852" data-rotate-x="-20.9904361492954" data-rotate-y="-2.67186514707282" data-scale="1">
+		<div class="subtitle">
+			<p><b>Why</b> am I here...</p>
+			<br />
+			<center><img src="img/gifs/thinking.gif" alt="Thinking" class="fixed_height" /></center>
+		</div>
+	</div>
+	
+	<div id="contents" class="step slide" data-x="-1108.52808121268" data-y="-1308.1417559095" data-z="-4681.43729407216" data-rotate-z="-23.965400009416" data-rotate-x="10.2098805871792" data-rotate-y="-26.1368889855221" data-scale="1">
+		<div class="slide-title">Table of contents</div>
+		<div class="slide-content">
+			<ul class="lv1_indent">
+				<li><em>Important aspects of governance</em></li>
+				<ul class="lv2_indent">
+					<li>Governance systems</li>
+					<li>Software licenses</li>
+					<li>Community relevance and volume</li>
+					<li>Language Health, activity and evolution</li>
+				</ul>
+				<br />
+				<li><em>Analysis of some languages</em></li>
+				<ul class="lv2_indent">
+					<li>Java, C, C#, Python, PHP, JavaScript, Ruby, Perl, Groovy, Go, Rust and Clojure</li>
+				</ul>
+				<br />
+				<li><em>Comparing them together...</em></li>
+				<ul class="lv2_indent">
+					<li>by corporate interest, by public projects, by jobs posted, by SO activity, ...</li>
+				</ul>
+				<br />
+				<li><em>My own Magic Quadrant</em></li>
+				<br />
+				<li><em>Discuss!! ;-)</em></li>
+			</ul>
+		</div>
+	</div>
 
-    <div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
-        <p>visualize your <b>big</b> <span class="thoughts">thoughts</span></p>
-    </div>
+	<div id="governance-concerns" class="step slide" data-x="826.844716809432" data-y="-1686.90435530724" data-z="-4537.39306963917" data-rotate-z="11.4492310364731" data-rotate-x="17.8171954778954" data-rotate-y="16.2260488076136" data-scale="1">
+		<div class="slide-title">Important aspects of governance</div>
+		<div class="slide-content">
+			<img src="img/what_is_democracy.gif" alt="What's democracy" class="img_back maxed_height" />
+			<div class="source">
+				<p>Original Source: unknown (sorry)</p>
+			</div>
+		</div>
+	</div>
 
-    <!--
-        
-        And now it gets really exciting! We move into third dimension!
-        
-        Along with `data-x` and `data-y`, you can define the position on third (Z) axis, with
-        `data-z`. In the example below we use `data-z="-3000"` meaning that element should be
-        positioned far away from us (by 3000px).
-        
-    -->
-    <div id="tiny" class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
-        <p>and <b>tiny</b> ideas</p>
-    </div>
+	<div id="governance-systems" class="step slide" data-x="2459.76715365685" data-y="-760.844566994931" data-z="-4393.34884520618" data-rotate-z="18.5760897095315" data-rotate-x="0.932512330356985" data-rotate-y="-8.64413752080873" data-scale="1">
+		<div class="slide-title">Governance systems</div>
+		<div class="slide-content">
+			<br />
+			<ul class="lv2_indent">
+				<li><em>BDFL</em></li>
+				<ul class="lv1_indent">
+					<li>Dennis Ritchie*</li>
+					<li>Guido van Rossum</li>
+					<li>Yukihiro Matsumoto*</li>
+					<li>Larry Wall</li>
+					<li>Rich Hickey</li>
+					<li>...</li>
+				</ul>
+				<br />
+				<li><em>Standards Boards</em></li>
+				<ul class="lv1_indent">
+					<li>Java's JCP</li>
+					<li>C's WG</li>
+					<li>ECMA International</li>
+					<li>...</li>
+				</ul>
+			</ul>
+		</div>
+		<div class="notes">
+			<p>BDFLs</p>
+			<ul>
+				<li>Dennis Ritchie* in C</li>
+				<li>Guido van Rossum in Python</li>
+				<li>Yukihiro Matsumoto* in Ruby</li>
+				<li>Larry Wall in Perl</li>
+				<li>Rich Hickey in Clojure</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div id="free-software-licenses" class="step slide" data-x="2706.1616482732" data-y="795.494877000818" data-z="-4249.30462077319" data-rotate-z="-6.92014610487968" data-rotate-x="0.552984201349318" data-rotate-y="22.2087543876842" data-scale="1">
+		<div class="slide-title">Main Free Software Licenses</div>
+		<div class="slide-content">
+			<ul class="lv0_indent">
+				<li><a href="https://en.wikipedia.org/wiki/GNU_General_Public_License"><em>General Public License (GPL)</em></a></li>
+				<ul class="lv0_indent">
+					<li>GPL is the most widely used free software license and has a strong copyleft requirement</li>
+					<li>When distributing derived works, the source code of the work must be made available under the same license</li>
+				</ul>
+				<li><a href="https://en.wikipedia.org/wiki/BSD_licenses"><em>Berkley Software Distribution (BSD)</em></a></li>
+				<ul class="lv0_indent">
+					<li>A permissive license lets people do anything with your code with proper attribution and without warranty</li>
+				</ul>
+				<li><a href="https://en.wikipedia.org/wiki/MIT_License"><em>MIT License</em></a></li>
+				<ul class="lv0_indent">
+					<li>A permissive license that lets people do anything with your code with proper attribution and without warranty</li>
+				</ul>
+				<li><a href="https://en.wikipedia.org/wiki/Apache_License"><em>Apache License</em></a></li>
+				<ul class="lv0_indent">
+					<li>A permissive license that also provides an express grant of patent rights from contributors to users</li>
+				</ul>
+				<li><a href="https://en.wikipedia.org/wiki/Mozilla_Public_License"><em>Mozilla Public License</em></a></li>
+				<ul class="lv0_indent">
+					<li>This license attempts to be a compromise between the permissive BSD license and the reciprocal GPL license</li>
+				</ul>
+			</ul>			
+			<div class="source">
+				<p>Source: <a href="http://choosealicense.com/">choosealicense.com</a> by <a href="http://github.com/">Github, Inc</a></p>
+			</div>
+		</div>
+	</div>
+	
+	<div id="community-relevance" class="step slide" data-x="1482.26458878808" data-y="2075.14736020321" data-z="-4105.2603963402" data-rotate-z="11.8952159062028" data-rotate-x="22.6456450223923" data-rotate-y="22.9591587362811" data-scale="1">
+		<div class="slide-title">Community relevance</div>
+		<div class="slide-content">
+			<img src="img/fosdem_2015.jpg" alt="FOSDEM 2015" class="img_back maxed_height" />
+			<div class="source">
+				<p>Source: <a href="https://www.flickr.com/photos/boklm/8445085831/in/pool-fosdem/">Nicolas Vigier | Flickr </a></p>
+			</div>
+		</div>
+	</div>
 
-    <!--
-        
-        This step here doesn't introduce anything new when it comes to data attributes, but you
-        should notice in the demo that some words of this text are being animated.
-        It's a very basic CSS transition that is applied to the elements when this step element is
-        reached.
-        
-        At the very beginning of the presentation all step elements are given the class of `future`.
-        It means that they haven't been visited yet.
-        
-        When the presentation moves to given step `future` is changed to `present` class name.
-        That's how animation on this step works - text moves when the step has `present` class.
-        
-        Finally when the step is left the `present` class is removed from the element and `past`
-        class is added.
-        
-        So basically every step element has one of three classes: `future`, `present` and `past`.
-        Only one current step has the `present` class.
-        
-    -->
-    <div id="ing" class="step" data-x="3500" data-y="-850" data-rotate="270" data-scale="6">
-        <p>by <b class="positioning">positioning</b>, <b class="rotating">rotating</b> and <b class="scaling">scaling</b> them on an infinite canvas</p>
-    </div>
+	<div id="community-diversity" class="step slide" data-x="-552.717294697702" data-y="2457.65070311738" data-z="-3961.21617190722" data-rotate-z="4.35534316627309" data-rotate-x="-20.6682840040885" data-rotate-y="2.05763942515478" data-scale="1">
+		<div class="slide-title">Community diversity</div>
+		<div class="slide-content">
+			<img src="img/django-girls.jpg" alt="Django Girls at PyConEs 2015" class="img_back maxed_height" />
+			<div class="source">
+				<p>Source: <a href="https://twitter.com/DjangoGirlsES/status/667790191487266816">Django Girls at PyConEs 2015</a></p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>Attributes: age, culture, ethnicity, gender identity or expression, national origin, physical or mental difference, politics, race, religion, sex, sexual orientation, socio-economic status, and subculture.</p>
+			<p>Source: <a href="https://www.python.org/community/diversity/">python.org</a></p>
+		</div>
+	</div>
+	
+	<div id="language-health" class="step slide" data-x="-2477.64758972523" data-y="1806.64586878935" data-z="-3817.17194747423" data-rotate-z="4.64932341640815" data-rotate-x="16.8599319742061" data-rotate-y="15.1858016713522" data-scale="1">
+		<div class="slide-title">Language Health</div>
+		<div class="slide-content">
+			<img src="img/language-rankings-2015-Q3.png" alt="language rankings in the 2015 Q3" class="img_back maxed_height" />
+			<div class="source">
+				<p>Source: <a href="https://redmonk.com/sogrady/2015/07/01/language-rankings-6-15/">Redmonk.com</a></p>
+			</div>
+		</div>
+	</div>
 
-    <div id="imagination" class="step" data-x="6700" data-y="-300" data-scale="6">
-        <p>the only <b>limit</b> is your <b class="imagination">imagination</b></p>
-    </div>
+	<div id="language-popularity" class="step slide" data-x="3927.87495443346" data-y="2305.80903081844" data-z="1512.46435654639" data-rotate-z="6.49525618460029" data-rotate-x="16.8790565435775" data-rotate-y="25.3796239066869" data-scale="1">
+		<div class="slide-title">Language popularity</div>
+		<div class="slide-content">
+			<br />
+			<center><img src="img/TIOBE_2015_11.png" alt="TIOBE Programming Community index - Nov 2015" class="full_height" /></center>
+			<div class="source">
+				<p>Source: <a href="http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html">TIOBE Programming Community Index</a></p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>The TIOBE Programming Community index is an indicator of the popularity of programming languages. The index is updated once a month. The ratings are based on the number of skilled engineers world-wide, courses and third party vendors</p>
+		</div>		
+	</div>
 
-    <div id="source" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
-        <p>want to know more?</p>
-        <q><a href="http://github.com/bartaz/impress.js">use the source</a>, Luke!</q>
-    </div>
+	<div id="public-presence" class="step slide" data-x="5113.56996737113" data-y="277.279166381659" data-z="-792.243234381443" data-rotate-z="-12.7920515541919" data-rotate-x="-10.9151441124268" data-rotate-y="-16.4482533456758" data-scale="1">
+		<div class="slide-title">Public presence (and activity)</div>
+		<div class="slide-content">
+			<img src="img/GitHut_ranking-2014-Q4.png" alt="GitHut ranking 2014 Q4" class="img_back maxed_height" />
+			<div class="source">
+				<p>Source: <a href="http://githut.info/">githut.info</a></p>
+			</div>
+		</div>
+	</div>
 
-    <div id="one-more-thing" class="step" data-x="6000" data-y="4000" data-scale="2">
-        <p>one more thing...</p>
-    </div>
+	<div id="language-evolution" class="step slide" data-x="4771.31544156004" data-y="-1349.6359337133" data-z="-936.287458814433" data-rotate-z="-23.7471046987921" data-rotate-x="-22.5210492387414" data-rotate-y="22.2871624315158" data-scale="1">
+		<div class="slide-title">Language evolution</div>
+		<div class="slide-content">
+			<img src="img/Java_code_evolution.jpg" alt="Java Code Evolution" class="img_back maxed_height" />
+			<div class="source">
+				<p>Source: <a href="https://twitter.com/fabianenardon/status/658742339217682432">@fabianenardon</a> at JavaOne 2015</p>
+			</div>
+		</div>
+		<div class="notes">
+			<ul>
+				<p>Java 1: 1997</p>
+				<p>Java 5: 2004</p>
+				<p>Java 8: 2014</p>
+			</ul>
+		</div>
+	</div>
+	
+	<div id="language-analysis" class="step slide" data-x="-3532.36655440211" data-y="413.654981978751" data-z="-3673.12772304124" data-rotate-z="-10.2365337316878" data-rotate-x="-22.9837124529295" data-rotate-y="-4.9537646966055" data-scale="1">
+		<div class="subtitle">
+			<p>Let's analyze <br /><em>some</em> of the main languages</p>
+			<br />
+			<center><img src="img/gifs/nervous_minions.gif" alt="Nervous" class="fixed_height" /></center>
+		</div>
+	</div>
 
-    <!--
-        
-        And the last one shows full power and flexibility of impress.js.
-        
-        You can not only position element in 3D, but also rotate it around any axis.
-        So this one here will get rotated by -40 degrees (40 degrees anticlockwise) around X axis and
-        10 degrees (clockwise) around Y axis.
-        
-        You can of course rotate it around Z axis with `data-rotate-z` - it has exactly the same effect
-        as `data-rotate` (these two are basically aliases).
-        
-    -->
-    <div id="its-in-3d" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
-        <p><span class="have">have</span> <span class="you">you</span> <span class="noticed">noticed</span> <span class="its">it's</span> <span class="in">in</span> <b>3D<sup>*</sup></b>?</p>
-        <span class="footnote">* beat that, prezi ;)</span>
-    </div>
+	<div id="Java" class="step slide" data-x="-3359.1958290313" data-y="-1193.22125104283" data-z="-3529.08349860825" data-rotate-z="5.70906670019031" data-rotate-x="7.8045813976787" data-rotate-y="16.3336553201079" data-scale="1">
+		<div class="slide-title centered-title"><img src="img/logos/Java.png" alt="Java logo" class="slide_logo" /> <em>Java</em></div>
+		<div class="slide-content">
+			<ul class="lv0_indent">
+				<li>Designed by <em>James Gosling</em> @ Sun Microsystems in <em>1995</em></li>
+				<li><em>GNU GPL License</em> (since 2007)</li>
+				<br />
+				<li>Last stable version: <em>v1.8</em> (published in 18/03/2014)</li>
+				<br />
+				<li>Standardized: <em>de facto standard</em></li>
+				<ul class="lv0_indent">
+					<li>Language is defined in the <a href="http://docs.oracle.com/javase/specs/jls/se8/html/index.html">Java Language Specification</a></li>
+					<li>The <em>JCP</em> defines and improves the standard</li>
+				</ul>
+				<br />
+				<li>Relevant aspects:</li>
+				<ul class="lv0_indent">
+					<li>Java is open, but is the process?</li>
+					<li>The JCP is transparent and more or less plural</li>
+					<li><a href="http://arstechnica.com/information-technology/2010/11/apache-foundation-to-vote-down-java-7-protesting-oracle-abuses/">Oracle has abused of the JCP sometimes</a></li>
+				</ul>
+			</ul>			
+			<div class="source">
+				<p>Source: <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">Wikipedia</a></p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>A de facto standard is a custom, convention, product, or system that has achieved a dominant position by public acceptance or market forces (such as early entrance to the market)</p>
+		</div>
+	</div>
 
-    <!--
-        
-        So to summarize of all the possible attributes used to position presentation steps, we have:
-        
-        * `data-x`, `data-y`, `data-z` - they define the position of **the center** of step element on
-            the canvas in pixels; their default value is 0;
-        * `data-rotate-x`, `data-rotate-y`, 'data-rotate-z`, `data-rotate` - they define the rotation of
-            the element around given axis in degrees; their default value is 0; `data-rotate` and `data-rotate-z`
-            are exactly the same;
-        * `data-scale` - defines the scale of step element; default value is 1
-        
-        These values are used by impress.js in CSS transformation functions, so for more information consult
-        CSS transfrom docs: https://developer.mozilla.org/en/CSS/transform
-        
-    -->
-    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
-    </div>
+	<div id="JCP" class="step slide" data-x="4530.34976297041" data-y="1864.97053984298" data-z="-648.199009948454" data-rotate-z="-2.37760481145233" data-rotate-x="-5.92750818282366" data-rotate-y="-13.9644369925372" data-scale="1">
+		<div class="slide-title centered-title"><em>JCP Timeline</em></div>
+		<div class="slide-content">
+			<img src="img/jcp-flow.png" alt="Java JCP Timeline" class="img_back maxed_height" />
+			<div class="source">
+				<p>Source: <a href="https://www.jcp.org/en/introduction/timeline">jcp.org/en/introduction/timeline</a></p>
+			</div>
+		</div>
+	</div>
+	
+	<div id="C" class="step slide" data-x="-2049.49172094371" data-y="-2467.74176318199" data-z="-3385.03927417526" data-rotate-z="-4.11954593891278" data-rotate-x="16.6860241340473" data-rotate-y="20.6819117213599" data-scale="1">
+		<div class="slide-title centered-title"><img src="img/logos/C.png" alt="C logo" class="slide_logo" /> <em>C</em></div>
+		<div class="slide-content">
+			<ul class="lv0_indent">
+				<li>Designed by <em>Dennis Ritchie</em> @ Bell Labs in <em>1972</em></li>
+				<li><em>GNU GPL License</em> (since 2007)</li>
+				<br />
+				<li>Last stable version: <em>C11</em> (published in 08/12/2011)</li>
+				<br />
+				<li>Standardized: <em>since 1989 (ANSI C89, ISO C90, ISO C99, ISO C11)</em></li>
+				<ul class="lv0_indent">
+					<li>the <a href="http://www.open-std.org/jtc1/sc22/wg14/">WG14</a> defines and improves the standard</li>
+				</ul>
+				<br />
+				<li>Relevant aspects:</li>
+				<ul class="lv0_indent">
+					<li>Dennis Ritchie started as BDFL but ceded control to the <i>Working Group</i></li>
+					<li>The WG14 membership is unclear</li>
+					<li>One of the oldest, but still evolving! :-)</li>
+				</ul>
+			</ul>			
+			<div class="source">
+				<p>Source: <a href="https://en.wikipedia.org/wiki/C_(programming_language)">Wikipedia</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="Dennis-Ritchie" class="step slide" data-x="3129.91072635406" data-y="3125.19138859959" data-z="-504.154785515464" data-rotate-z="-15.3894535289146" data-rotate-x="-9.78448105137795" data-rotate-y="-15.3908434328623" data-scale="1">
+		<div class="slide-title centered-title"><em>Dennis Ritchie FTW</em></div>
+		<div class="slide-content">
+			<img src="img/dennis_ritchie.jpg" alt="Dennis Ritchie" class="img_back full_height" />
+			<div class="source">
+				<p>Original Source: unknown (sorry)</p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>Notable work</p>
+			<ul>
+				<li>C (with Brian Kernighan)</li>
+				<li>Unix (with Ken Thompson)</li>
+				<li>Unix Programmer's Manual (1971)</li>
+				<li>The C Programming Language (book)</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div id="C-Sharp" class="step slide" data-x="-42.5111012946679" data-y="-3017.97422801188" data-z="-3240.99504974227" data-rotate-z="1.35907403798774" data-rotate-x="2.69848668342456" data-rotate-y="-0.962657660711557" data-scale="1">
+		<div class="slide-title centered-title"><img src="img/logos/C_Sharp.png" alt="C# logo" class="slide_logo" /> <em>C#</em></div>
+		<div class="slide-content">
+			<ul class="lv0_indent">
+				<li>Designed by a Microsoft team lead by <em>Anders Hejlsberg</em> in <em>2000</em></li>
+				<li>The CLR (Common Language Runtime) is <em>proprietary</em> but thanks to <a href="http://www.mono-project.com/">The Mono Project</a> there is a Free and Open implementation* by <em>Miguel de Icaza</em> @ Ximian since <em>2004</em></li>
+				<br />
+				<li>Last stable version: <em>v6.0</em> (published in 20/07/2015)</li>
+				<br />
+				<li>Standardized: <em>since 2000 (ECMA-334, ISO/IEC 23270:2006)</em></li>
+				<ul class="lv0_indent">
+					<li>Microsoft defines the standard and improves the language</li>
+				</ul>
+				<br />
+				<li>Relevant aspects:</li>
+				<ul class="lv0_indent">
+					<li>Microsoft tried first with a non standard implementation of Java... but finally desisted</li>
+					<li>Microsoft is leading the development of a new Open Source C# compiler, codenamed <a href="https://en.wikipedia.org/wiki/.NET_Compiler_Platform">Rosylin</a></li>
+				</ul>
+			</ul>			
+			<div class="source">
+				<p>Source: <a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)">Wikipedia</a></p>
+			</div>
+		</div>
+		<div class="notes">
+			<li>Microsoft tried first with a non standard implementation of Java... but finally desisted</li>
+		</div>
+	</div>
+
+	<div id="The-Mono-Project" class="step slide" data-x="1166.51236803926" data-y="3831.03291336926" data-z="-360.110561082475" data-rotate-z="23.8151941127144" data-rotate-x="-15.9011141764931" data-rotate-y="6.59372824151069" data-scale="1">
+		<div class="slide-title centered-title"><em>The Mono Project</em></div>
+		<div class="slide-content">
+			<img src="img/logos/Mono_project.png" alt="The Mono Project" class="img_back maxed_height" />
+		</div>
+		<div class="notes">
+			<p><em>Mono</em> provides an Open Source compiler, but <a href="http://tirania.org/blog/archive/2011/Mar-07.html">does not cover all since v4.0</a></p>
+			<p>Without any official support and despite potential legal issues hanging over their heads, they pushed forward and created an incredibly capable alternative to the official runtime implementation</p>
+		</div>
+	</div>
+
+	<div id="Python" class="step slide" data-x="2053.58643957107" data-y="-2697.90870436419" data-z="-3096.95082530928" data-rotate-z="23.0362657033838" data-rotate-x="-20.4365763491951" data-rotate-y="-19.3608046872541" data-scale="1">
+		<div class="slide-title centered-title"><img src="img/logos/Python.png" alt="Python logo" class="slide_logo" /> <em>Python</em></div>
+		<div class="slide-content">
+			<ul class="lv0_indent">
+				<li>Designed by <em>Guido van Rossum</em> in <em>1991</em></li>
+				<li><em>Python Software Foundation License</em> (since 2001)</li>
+				<br />
+				<li>Last stable version: <em>v3.5.0 / v2.7.10</em> (published in 13/09/2015 and 23/05/2015 respectively)</li>
+				<br />
+				<li>Standardized: <em>No</em></li>
+				<ul class="lv0_indent">
+					<li>The <a href="https://www.python.org/psf/">Python Software Foundation</a> fosters the development, and improves the language</li>
+				</ul>
+				<br />
+				<li>Relevant aspects:</li>
+				<ul class="lv0_indent">
+					<li>Python is driven by its community, almost everything is discussed in the <a href="https://mail.python.org/mailman/listinfo/python-list">mailing list</a></li>
+					<li><a href="http://arstechnica.com/information-technology/2010/11/apache-foundation-to-vote-down-java-7-protesting-oracle-abuses/">CPython</a>, the reference implementation, is written in C, but there is another interpreter (<a href="http://pypy.org/">PyPy</a>) written in RPython</li>
+				</ul>
+			</ul>
+			<div class="source">
+				<p>Source: <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Wikipedia</a></p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>Pypy survives with public fundings and private donations. The port to ARM architecture was sponsored in part by the Raspberry Pi Foundation</p>
+			<p>RPython (Restricted Python)</p>
+		</div>
+	</div>
+
+	<div id="Zen-of-Python" class="step slide" data-x="-1006.39453590204" data-y="3856.22097333646" data-z="-216.066336649485" data-rotate-z="23.8544118767604" data-rotate-x="-1.28628375940025" data-rotate-y="13.7597940671258" data-scale="1">
+		<div class="slide-title centered-title"><em>The Zen of Python</em></div>
+		<div class="slide-content">
+			<img src="img/Zen_of_Python.png" alt="The Zen of Python" class="img_back maxed_height" />
+			<div class="source">
+				<p>Source: <a href="https://www.python.org/dev/peps/pep-0020/">PEP 20 - The Zen of Python</a></p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>A common neologism in the Python community is <b>pythonic</b></p>
+			<p>An important goal of the Python developers is making Python fun to use</p>
+		</div>
+	</div>
+
+	<div id="PHP" class="step slide" data-x="3651.72779800716" data-y="-1614.97321032257" data-z="-2952.90660087629" data-rotate-z="-1.65011863969266" data-rotate-x="25.9320663562976" data-rotate-y="24.2949895514175" data-scale="1">
+		<div class="slide-title centered-title"><img src="img/logos/PHP.png" alt="PHP logo" class="slide_logo" /> <em>PHP</em></div>
+		<div class="slide-content">
+			<ul class="lv0_indent">
+				<li>Designed by <em>Rasmus Lerdorf</em> in <em>1995</em></li>
+				<li><em>PHP License</em> (not GPL compatible)</li>
+				<br />
+				<li>Last stable version: <em>v5.6.15</em> (published in 29/10/2015)</li>
+				<br />
+				<li>Standardized: <em>No</em></li>
+				<ul class="lv0_indent">
+					<li>Almost anyone can submit an RFC, but <a href="http://php.net/credits.php">The PHP Group</a> is in command</li>
+				</ul>
+				<br />
+				<li>Relevant aspects:</li>
+				<ul class="lv0_indent">
+					<li>The PHP Group membership is unclear</li>
+					<li><a href="https://wiki.php.net/rfc/releaseprocess">The release process was improved recently through a RFC</a></li>
+				</ul>
+			</ul>			
+			<div class="source">
+				<p>Source: <a href="https://en.wikipedia.org/wiki/PHP">Wikipedia</a></p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>You can always fork PHP from <a href="https://github.com/php/php-src">github</a></p>
+		</div>
+	</div>
+
+	<div id="PHP-Community" class="step slide" data-x="-2999.33156706374" data-y="3196.45529872746" data-z="-72.0221122164947" data-rotate-z="20.4166082418524" data-rotate-x="18.9244071724825" data-rotate-y="-3.26077294908464" data-scale="1">
+		<div class="slide-title centered-title"><em>The PHP Community</em></div>
+		<div class="slide-content">
+			<img src="img/php-user-groups.png" alt="PHP User Groups" class="img_back maxed_height" />
+			<div class="source">
+				<p>Source: <a href="http://php.ug/">php.ug</a></p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>Facebook, Wordpress</p>
+		</div>
+	</div>
+
+	<div id="JavaScript" class="step slide" data-x="4337.07081064206" data-y="-71.2283329787362" data-z="-2808.8623764433" data-rotate-z="14.2370389387943" data-rotate-x="-6.51879984838888" data-rotate-y="-10.7267666640691" data-scale="1">
+		<div class="slide-title centered-title"><img src="img/logos/JavaScript.png" alt="JavaScript logo" class="slide_logo" /> <em>JavaScript</em></div>
+		<div class="slide-content">
+			<ul class="lv0_indent">
+				<li>Designed by <em>Brendan Eich</em> @ Netscape in <em>1995</em></li>
+				<li><a href="http://www.mozilla.org/rhino">Rhino</a> has <em>MPL license</em>, <a href="http://code.google.com/p/v8">V8</a> has <em>BSD license</em></li>
+				<br />
+				<li>Last stable version: <em>ECMAScript 6</em> (published in 17/06/2015)</li>
+				<br />
+				<li>Standardized: <em>since 1997 (ECMA 262)</em></li>
+				<ul class="lv0_indent">
+					<li>The <a href="http://www.ecma-international.org/memento/TC39.htm">TC39 Group</a> defines and improves the standard</li>
+				</ul>
+				<br />
+				<li>Relevant aspects:</li>
+				<ul class="lv0_indent">
+					<li>TC39 membership process is unclear, and <a href="http://www.ecma-international.org/memento/TC39-RF-TG%20-%20members.htm">it's coped by multinationals</a></li>
+					<li>Don't panic, but <a href="http://tsdr.uspto.gov/#caseNumber=75026640&caseType=SERIAL_NO&searchType=statusSearch">"JavaScript" is a <b>trademark</b> of Oracle</a></li>
+					<li>LiveScript vs JScript vs JavaScript vs ECMAScript</li>
+				</ul>
+			</ul>			
+			<div class="source">
+				<p>Source: <a href="https://en.wikipedia.org/wiki/JavaScript">Wikipedia</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="JS-flavours" class="step slide" data-x="-4455.50629292059" data-y="1969.542152888" data-z="72.0221122164947" data-rotate-z="-6.92986904550344" data-rotate-x="-25.2214611656964" data-rotate-y="-21.8201188724488" data-scale="1">
+		<div class="slide-title centered-title"><em>Choose your JS flavour... till it stales</em></div>
+		<div class="slide-content">
+			<img src="img/js-frameworks-1-0.png" alt="JS Frameworks 1.0 Releases" class="img_back maxed_height" />
+			<div class="source">
+				<p>Source: <a href="http://brewhouse.io/blog/2015/05/13/emberjs-an-antidote-to-your-hype-fatigue.html">Ember.js: An Antidote To Your Hype Fatigue</a></p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>...</p>
+		</div>
+	</div>
+	
+	<div id="Ruby" class="step slide" data-x="3951.70125241365" data-y="1533.6488252002" data-z="-2664.81815201031" data-rotate-z="-8.19175619864836" data-rotate-x="-21.0787690160796" data-rotate-y="-18.9121158616617" data-scale="1">
+		<div class="slide-title centered-title"><img src="img/logos/Ruby.png" alt="Ruby logo" class="slide_logo" /> <em>Ruby</em></div>
+		<div class="slide-content">
+			<ul class="lv0_indent">
+				<li>Designed by <em>Yukihiro "Matz" Matsumoto</em> in <em>1995</em></li>
+				<li><em>Ruby License</em> and <em>GPLv2</em></li>
+				<br />
+				<li>Last stable version: <em>v2.2.3</em> (published in 18/08/2015)</li>
+				<br />
+				<li>Standardized: <em>since 2011 (JIS X 3017, ISO/IEC 30170)</em></li>
+				<ul class="lv0_indent">
+					<li>The Ruby Core is improved by its community</li>
+				</ul>
+				<br />
+				<li>Relevant aspects:</li>
+				<ul class="lv0_indent">
+					<li>Commit rights are (apparently) obtained by merits, but Matz's approval is always required</li>
+				</ul>
+			</ul>			
+			<div class="source">
+				<p>Source: <a href="https://en.wikipedia.org/wiki/Ruby_(programming_language)">Wikipedia</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="Poignant-Guide" class="step slide" data-x="-4853.95916616077" data-y="-1246.74330029826" data-z="360.110561082474" data-rotate-z="-0.568720574956387" data-rotate-x="-5.35226383013651" data-rotate-y="-26.6784114581533" data-scale="1">
+		<div class="slide-title centered-title"><em>Why's (Poignant) Guide to Ruby</em></div>
+		<div class="slide-content">
+			<br />
+			<center><img src="img/poignant-guide-2.png" alt="Why's (Poignant) Guide to Ruby" class="maxed_height" /></center>
+			<br />
+			<center><img src="img/poignant-guide-3.png" alt="Why's (Poignant) Guide to Ruby" class="maxed_height" /></center>
+			<div class="source">
+				<p>Source: <a href="http://poignant.guide/book/">http://poignant.guide/book</a></p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>Why’s (Poignant) Guide to Ruby is released under the Attribution-ShareAlike License.</p>
+		</div>
+	</div>
+	
+	<div id="Perl" class="step slide" data-x="2606.57220791708" data-y="2808.05179209914" data-z="-2520.77392757732" data-rotate-z="10.3963540149853" data-rotate-x="18.9115234413184" data-rotate-y="-14.7844593124464" data-scale="1">
+		<div class="slide-title centered-title"><img src="img/logos/Perl.png" alt="Perl logo" class="slide_logo" /> <em>Perl</em></div>
+		<div class="slide-content">
+			<ul class="lv0_indent">
+				<li>Designed by <em>Larry Wall</em> @ Unisys in <em>1987</em></li>
+				<li><em>GNU GPL License</em></li>
+				<br />
+				<li>Last stable version: <em>v5.22.0</em> (published in 01/06/2015)</li>
+				<br />
+				<li>Standardized: <em>No</em></li>
+				<ul class="lv0_indent">
+					<li>Perl 5 is actively maintained and developed by a large group of dedicated volunteers.</li>
+					<li><a href="http://www.perl6.org/">Perl 6</a> will be a brand new language, scheduled for release by the end of 2015</li>
+				</ul>
+				<br />
+				<li>Relevant aspects:</li>
+				<ul class="lv0_indent">
+					<li>"<i>We're really serious about reinventing everything that needs reinventing</i>" --Larry Wall about Perl6</li>
+					<li>The Perl community rocks: <a href="http://www.csse.monash.edu.au/~damian/papers/HTML/Perligata.html">Lingua::Romana::Perligata</a> module, <a href="http://www.perlmonks.org/?node_id=1590">Perl Poetry</a>, ...</li>
+				</ul>
+			</ul>			
+			<div class="source">
+				<p>Source: <a href="https://en.wikipedia.org/wiki/Perl">Wikipedia</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="TIMTOWTDI" class="step slide" data-x="-3720.98933136763" data-y="-2658.91985188537" data-z="504.154785515464" data-rotate-z="14.0388008770533" data-rotate-x="2.84160749986768" data-rotate-y="-10.1068045017309" data-scale="1">
+		<div class="slide-title centered-title"><em>TIMTOWTDI</em></div>
+		<div class="slide-content">
+			<img src="img/perl_timtowtdi.jpg" alt="TIMTOWTDI" class="img_back maxed_height" />
+			<div class="source">
+				<p>Source: <a href="http://shop.oreilly.com/product/9780596000271.do">O'Reilly | Programming Perl, 3rd Edition</a></p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>There's more than one way to do it (pronounced Tim Toady) </p>
+		</div>
+	</div>
+	
+	<div id="Groovy" class="step slide" data-x="631.079471022043" data-y="3458.10247031468" data-z="-2376.72970314433" data-rotate-z="-11.5857834918424" data-rotate-x="13.8129114867188" data-rotate-y="4.54199692653492" data-scale="1">
+		<div class="slide-title centered-title"><img src="img/logos/Groovy.png" alt="Groovy logo" class="slide_logo" /> <em>Groovy</em></div>
+		<div class="slide-content">
+			<ul class="lv0_indent">
+				<li>Designed by <em>James Strachan</em> in <em>2003</em></li>
+				<li><em>Apache License v2.0</em> (since 2015)</li>
+				<br />
+				<li>Last stable version: <em>v2.4.4</em> (published in 09/07/2015)</li>
+				<br />
+				<li>Standardized: <em>in progress* through the JCP (<a href="https://www.jcp.org/en/jsr/detail?id=241">JSR 241</a>)</em></li>
+				<ul class="lv0_indent">
+					<li>"<i>Groovy, up to this, has been run by a few core project members with a lot of contributions coming from a wide community of participants in the project</i>"</li>
+				</ul>
+				<br />
+				<li>Relevant aspects:</li>
+				<ul class="lv0_indent">
+					<li><a href="http://glaforge.appspot.com/article/springsource-acquires-g2one">G2One acquired by SpringSource</a> (2008), 
+					then <a href="https://www.vmware.com/company/news/releases/springsource-close">acquired by VMWare</a> (2009),
+					<a href="http://spring.io/blog/2013/04/03/spring-and-open-source-at-the-pivotal-initiative/">then moved to Pivotal</a> (2013),
+					then <a href="http://grails.io/post/108534902333/the-future-of-groovy-grails-sponsorship">dumped by them</a>
+					 and finally <a href="https://blogs.apache.org/foundation/entry/groovy_submitted_to_become_a">moved to Apache SF</a> (2015)</li>
+					<li><a href="lthough">Groovy is growing massively</a>, although it is still adapting to the <a href="http://incubator.apache.org/">Apache Incubator</a> conditions</li>
+				</ul>
+			</ul>			
+			<div class="source">
+				<p>Source: <a href="https://en.wikipedia.org/wiki/Groovy_(programming_language)">Wikipedia</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="Apache-Groovy" class="step slide" data-x="-1916.70553607607" data-y="-3585.70224055219" data-z="648.199009948454" data-rotate-z="0.216369476169348" data-rotate-x="13.2779973442666" data-rotate-y="-12.1396016003564" data-scale="1">
+		<div class="slide-title centered-title"><em>Apache Groovy</em></div>
+		<div class="slide-content">
+			<br /><br /><br />
+			<center><img src="img/logos/ASF.png" alt="The Apache Software Foundation" class="maxed_height" /></center>
+			<div class="source">
+				<p>Source: <a href="http://incubator.apache.org/projects/groovy.html">Groovy Project Incubation Status</a></p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>...</p>
+		</div>
+	</div>
+	
+	<div id="Go" class="step slide" data-x="-1518.83733089532" data-y="3344.94102253977" data-z="-2232.68547871134" data-rotate-z="-23.7283142656088" data-rotate-x="8.05320987710729" data-rotate-y="-6.83826468419284" data-scale="1">
+		<div class="slide-title centered-title"><img src="img/logos/Go.png" alt="Go logo" class="slide_logo" /> <em>Go</em></div>
+		<div class="slide-content">
+			<ul class="lv0_indent">
+				<li>Designed by <em>Robert Griesemer, Rob Pike, Ken Thompson</em> @ Google in <em>2009</em></li>
+				<li><em>BSD-style license</em></li>
+				<br />
+				<li>Last stable version: <em>v1.5.1</em> (published in 08/09/2015)</li>
+				<br />
+				<li>Standardized: <em>No</em></li>
+				<ul class="lv0_indent">
+					<li>The Go community defines and improves the language</li>
+				</ul>
+				<br />
+				<li>Relevant aspects:</li>
+				<ul class="lv0_indent">
+					<li>Community driven, but with major support by <a href="https://www.google.es">Google</a></li>
+					<li>Griesemer, Pike and Thompson had the <b>luxury</b> to spend 2 years designing the basics</li>
+				</ul>
+			</ul>			
+			<div class="source">
+				<p>Source: <a href="https://en.wikipedia.org/wiki/Go_(programming_language)">Wikipedia</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="Go-Issue9" class="step slide" data-x="232.991901631324" data-y="-3856.22097333646" data-z="792.243234381443" data-rotate-z="16.897327227518" data-rotate-x="-19.3522325148806" data-rotate-y="5.7606334593147" data-scale="1">
+		<div class="slide-title centered-title"><em>Issue #9</em></div>
+		<div class="slide-content">
+			<center><img src="img/go_issue-9_1.png" alt="Go Issue 9" class="maxed_height" /></center>
+			<center><img src="img/go_issue-9_1097.png" alt="Go Issue 9" class="maxed_height" /></center>
+			<div class="source">
+				<p>Source: <a href="https://code.google.com/p/go/issues/detail?id=9&cnum=500&cstart=32">Go Language Issue Tracker</a></p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>...</p>
+		</div>
+	</div>
+	
+	<div id="Rust" class="step slide" data-x="-3368.99996732684" data-y="2502.77184607912" data-z="-2088.64125427835" data-rotate-z="-25.549648872111" data-rotate-x="-15.9149394636042" data-rotate-y="-16.0117687764578" data-scale="1">
+		<div class="slide-title centered-title"><img src="img/logos/Rust.png" alt="Rust logo" class="slide_logo" /> <em>Rust</em></div>
+		<div class="slide-content">
+			<ul class="lv0_indent">
+				<li>Designed by <em>Graydon Hoare</em> @ Mozilla in <em>2010</em></li>
+				<li><em>Apache License v2.0</em></li>
+				<br />
+				<li>Last stable version: <em>v1.4</em> (published in 29/10/2015)</li>
+				<br />
+				<li>Standardized: <em>No</em></li>
+				<ul class="lv0_indent">
+					<li>Rust has a community-driven development process where most decisions are made through consensus, under the <a href="https://github.com/rust-lang/rfcs#the-role-of-the-shepherd"><i>stewardship</i></a> of a <a href="https://github.com/rust-lang/rust-wiki-backup/blob/master/Note-core-team.md">'core team'</a> with the main comitters</li>
+				</ul>
+				<br />
+				<li>Relevant aspects:</li>
+				<ul class="lv0_indent">
+					<li>Rust grew out of a personal project, <a href="http://mozilla.org/">Mozilla</a> began sponsoring the project in 2009 and announced it in 2010</li>
+					<li>The RFC process itself has been discussed publicly through public RFCs. Last one is <a href="https://github.com/rust-lang/rfcs/pull/1068">Scaling Rust's Governance #1068</a></li>
+				</ul>
+			</ul>			
+			<div class="source">
+				<p>Source: <a href="https://en.wikipedia.org/wiki/Rust_(programming_language)">Wikipedia</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="Mozilla" class="step slide" data-x="2334.87665087829" data-y="-3417.5108163523" data-z="936.287458814432" data-rotate-z="-10.4595156493597" data-rotate-x="-9.72850656369701" data-rotate-y="-26.0165966260247" data-scale="1">
+		<div class="slide-title centered-title"><em>Mozilla Foundation</em></div>
+		<div class="slide-content">
+			<img src="img/logos/Mozilla_Foundation.png" alt="Mozilla Foundation" class="img_back maxed_height" />
+			<div class="source">
+				<p>Source: <a href="https://www.mozilla.org/">mozilla.org</a></p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>Principles<p>
+			<ol>
+				<li>The Internet is an integral part of modern life—a key component in education, communication, collaboration, business, entertainment and society as a whole.</li>
+				<li>The Internet is a global public resource that must remain open and accessible.</li>
+				<li>The Internet must enrich the lives of individual human beings.</li>
+				<li>Individuals’ security and privacy on the Internet are fundamental and must not be treated as optional.</li>
+				<li>Individuals must have the ability to shape the Internet and their own experiences on the Internet.</li>
+				<li>The effectiveness of the Internet as a public resource depends upon interoperability (protocols, data formats, content), innovation and decentralized participation worldwide.</li>
+				<li>Free and open source software promotes the development of the Internet as a public resource.</li>
+				<li>Transparent community-based processes promote participation, accountability and trust.</li>
+				<li>Commercial involvement in the development of the Internet brings many benefits; a balance between commercial profit and public benefit is critical.</li>
+				<li>Magnifying the public benefit aspects of the Internet is an important goal, worthy of time, attention and commitment.</li>
+			</ol>
+		</div>
+	</div>
+	
+	<div id="Clojure" class="step slide" data-x="-4527.8758599841" data-y="1119.47815317505" data-z="-1944.59702984536" data-rotate-z="-2.47387114958838" data-rotate-x="-9.4776269774884" data-rotate-y="-14.8308294592425" data-scale="1">
+		<div class="slide-title centered-title"><img src="img/logos/Clojure.png" alt="Clojure logo" class="slide_logo" /> <em>Clojure</em></div>
+		<div class="slide-content">
+			<ul class="lv0_indent">
+				<li>Designed by <em>Rich Hickey</em> in <em>2007</em></li>
+				<li><em><a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License</a></em></li>
+				<br />
+				<li>Last stable version: <em>v1.7</em> (published in 30/06/2015)</li>
+				<br />
+				<li>Standardized: <em>No</em></li>
+				<ul class="lv0_indent">
+					<li>The current development process is community-driven, <i>overseen</i> by Rich Hickey as its BDFL</li>
+				</ul>
+				<br />
+				<li>Relevant aspects:</li>
+				<ul class="lv0_indent">
+					<li>The Clojure <a href="http://clojure.org/contributing">Contributor Agreement</a> gives Rich Hickey and the contributor joint copyright interests in the code</li>
+					<li>Clojure is <b>owned</b> by Rich Hickey</li>
+				</ul>
+			</ul>			
+			<div class="source">
+				<p>Source: <a href="https://en.wikipedia.org/wiki/Clojure">Wikipedia</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="Rich-Hickey" class="step slide" data-x="3998.57932570748" data-y="-2346.88114392223" data-z="1080.33168324742" data-rotate-z="1.02472262782976" data-rotate-x="23.303151614964" data-rotate-y="-11.4368000915274" data-scale="1">
+		<div class="slide-title centered-title"><em>BaaB (BDFL as a Bottleneck)</em></div>
+		<div class="slide-content">
+			<img src="img/clojure_workflow.png" alt="Clojure workflow" class="img_back maxed_height" />
+			<div class="source">
+				<p>Source: <a href="http://dev.clojure.org/display/design/JIRA+workflow+update">Clojure workflow</a></p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>...</p>
+		</div>
+	</div>
+
+	<div id="nearest-gatherings" class="step slide" data-x="4886.34269474343" data-y="816.102045955192" data-z="1368.4201321134" data-rotate-z="2.96657679788768" data-rotate-x="6.11793202674016" data-rotate-y="-18.3377765282057" data-scale="1">
+		<div class="slide-title centered-title"><img src="img/logos/Meetup.png" alt="Meetup logo" class="slide_logo" /><em>Communities and gatherings near here</em></div>
+		<div class="slide-content">
+			<br /><br /><br />
+			<ul class="lv1_indent">
+				<li><em>Java</em>: <a href="http://www.javahispano.org/">Java Hispano</a>, <a href="http://www.meetup.com/es/MadridJUG/">MadridJUG Meetup</a></li>
+				<li><em>C</em>: <a href="http://www.meetup.com/es/Madrid-C-Cpp/">Madrid C/C++ Meetup</a></li>
+				<li><em>C#</em>: <a href="http://www.meetup.com/es/madriddotnet/">Madrid.net Meetup</a>, <a href="http://www.meetup.com/es/Xamarin-Madrid/">Xamarin-Madrid Meetup</a></li>
+				<li><em>Python</em>: <a href="http://www.es.python.org/">Asociación Python España</a>, <a href="http://www.meetup.com/es/Madrid-Python-Meetup/">Madrid-Python Meetup</a></li>
+				<li><em>PHP</em>: <a href="http://www.meetup.com/es/PHPMad/">PHPMad Meetup</a></li>
+				<li><em>Javascript</em>: <a href="http://www.meetup.com/es/madridjs/">MadridJS Meetup</a>, <a href="http://www.meetup.com/es/Node-js-Madrid/">NodeJS Madrid Meetup</a>, <a href="http://www.meetup.com/es/AngularJS_Madrid/">AngularJS Madrid Meetup</a>, <a href="http://www.meetup.com/es/Ember-js-Madrid/">EmberJS Madrid Meetup</a>, <a href="http://www.meetup.com/es/Madrid-Polymer-Group/">Polymer Madrid Meetup</a></li>
+				<li><em>Ruby</em>: <a href="http://www.madridrb.com/">Madrid.rb</a></li>
+				<li><em>Perl</em>: <a href="http://www.meetup.com/es/Madrid-Perl-Mongers/">Madrid Perl Meetup</a></li>
+				<li><em>Groovy</em>: <a href="http://www.meetup.com/es/madrid-gug/">MadridGUG Meetup</a></li>
+				<li><em>Go</em>: <a href="http://www.meetup.com/es/go-mad/">Madrid Go Meetup</a></li>
+				<li><em>Rust</em>: <a href="http://www.meetup.com/es/Rust-Madrid/">Rust Madrid Meetup</a></li>
+				<li><em>Clojure</em>: <a href="http://www.meetup.com/es/FP-Madrid/">FP Madrid Meetup</a></li>
+			</ul>
+			<div class="source">
+				<p>Source: <a href="http://www.meetup.com/">Meetup.com</a> and others</p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>...</p>
+		</div>
+	</div>	
+	
+	<div id="comparing-languages" class="step slide" data-x="-4761.40458810938" data-y="-511.713239177997" data-z="-1800.55280541237" data-rotate-z="19.4176187398843" data-rotate-x="-26.3571897041984" data-rotate-y="0.203955756034702" data-scale="1">
+		<div class="subtitle">
+			<p>Comparing them together...</p>
+			<br />
+			<center><img src="img/gifs/excited_minions.gif" alt="Excited minions" class="fixed_height" /></center>
+		</div>
+	</div>
+
+	<div id="comparing-by-corporate-interest" class="step slide" data-x="-4030.59070896137" data-y="-2057.02127186877" data-z="-1656.50858097938" data-rotate-z="0.187243728898466" data-rotate-x="-2.39485695585608" data-rotate-y="15.9452846394852" data-scale="1">
+		<div class="slide-title">by <b>corporate interest</b></div>
+		<div class="slide-content">
+			<ul class="lv2_indent">
+				<li><em>#1 . . . Java</em></li>
+				<li><em>#2 . . . Javascript</em></li>
+				<li><em>#3 . . . Python</em></li>
+				<li><em>#4 . . . C</em></li>
+				<li><em>#5 . . . PHP</em></li>
+				<p>...</p>
+				<li><em>#7 . . . Ruby</em></li>
+				<li><em>#8 . . . C#</em></li>
+				<li> <em>#9 . . . Perl</em></li>
+				<p>...</p>
+				<li><em>#15 . . . Clojure</em></li>
+				<p>...</p>
+				<li><em>#20 . . . Groovy</em></li>
+				<p>...</p>
+				<li><em>#24 . . . Go</em></li>
+			</ul>
+			<div class="source">
+				<p>Source: <a href="http://blogs.gartner.com/mark_driver/2014/10/02/gartner-programming-language-index-for-2014/">Gartner Programming Language Index for 2014 | Gartner.com</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="comparing-by-projects-created" class="step slide" data-x="-2488.80050603156" data-y="-3209.60634205967" data-z="-1512.46435654639" data-rotate-z="-13.6000593421049" data-rotate-x="2.85400549136102" data-rotate-y="23.1429641791619" data-scale="1">
+		<div class="slide-title">by projects <b>created</b> on Github since 2010</div>
+		<div class="slide-content">
+			<img src="img/github_projects_since_2010.png" alt="# projects created on Github since 2010" class="img_back full_height" />
+			<div class="source">
+				<p>Source: <a href="https://bigquery.cloud.google.com/">Google BigQuery + Github Archive</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="comparing-by-jobs-posted-US" class="step slide" data-x="-443.100268174809" data-y="-3747.22883147201" data-z="-1368.4201321134" data-rotate-z="-9.14421677123755" data-rotate-x="7.82585505768657" data-rotate-y="8.40168526768684" data-scale="1">
+		<div class="slide-title">by <b>jobs posted</b> on Indeed.com</div>
+		<div class="slide-content">
+			<img src="img/jobs_posted_indeed.png" alt="# jobs posted on Indeed.com" class="img_back full_height" />
+			<div class="source">
+				<p>Source: <a href="http://www.indeed.com/jobs">Indeed.com/jobs</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="comparing-by-jobs-posted-spain" class="step slide" data-x="1710.34178298092" data-y="-3570.60120337615" data-z="-1224.37590768041" data-rotate-z="-3.50339098786935" data-rotate-x="-17.2990585276857" data-rotate-y="4.37983997818083" data-scale="1">
+		<div class="slide-title">by <b>jobs posted</b> in LinkedIn (in Spain)</div>
+		<div class="slide-content">
+			<img src="img/jobs_posted_linkedin_spain.png" alt="# jobs posted on LinkedIn (in Spain)" class="img_back full_height" />
+			<div class="source">
+				<p>Source: <a href="https://www.linkedin.com/job/home">LinkedIn.com/job</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="comparing-by-activity" class="step slide" data-x="3563.38895599792" data-y="-2717.17066456463" data-z="-1080.33168324742" data-rotate-z="-4.92286314675584" data-rotate-x="22.7771972785704" data-rotate-y="17.6900199959055" data-scale="1">
+		<div class="slide-title">by <b>activity</b> in StackOverflow</div>
+		<div class="slide-content">
+			<img src="img/activity_StackOverflow.png" alt="Activity in StackOverflow" class="img_back full_height" />
+			<div class="source">
+				<p>Source: <a href="http://stackoverflow.com/tags">StackOverflow.com/tags</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="magic-quadrant-title" class="step slide" data-x="-5113.56996737113" data-y="394.510037824158" data-z="216.066336649484" data-rotate-z="24.8185007558204" data-rotate-x="20.3708090535365" data-rotate-y="18.6662056334317" data-scale="1">
+		<div class="subtitle">
+			<p>My own...<br /><em>Magic Quadrant</em></p>
+			<br />
+			<center><img src="img/gifs/holy_shit.gif" alt="Holy Shit!" class="fixed_height" /></center>
+		</div>
+	</div>
+
+	<div id="magic-quadrant" class="step slide" data-x="4908.72504262227" data-y="-841.207257016048" data-z="1224.37590768041" data-rotate-z="5.3342168550007" data-rotate-x="-21.2273240843788" data-rotate-y="-3.91534665925428" data-scale="1">
+		<div class="slide-title centered-title"><em>Magic Quadrant</em></div>
+		<div class="slide-content">
+			<img src="img/magic_quadrant.png" alt="Magic Quadrant" class="img_back maxed_height" />
+			<div class="source">
+				<p>Source: lots of data + biased opinions</p>
+			</div>
+		</div>
+		<div class="notes">
+			<p>Ethics Parameters</p>
+			<ul>
+				<li>Governance transparency</li>
+				<li>Freedom & Independency</li>
+				<li>License</li>
+				<li>Community relevance</li>
+				<li>Efforts to diversity</li>
+			</ul>
+			<p>Health Parameters</p>
+			<ul>
+				<li>Language Popularity (TIOBE)</li>
+				<li>Public presence (Github)</li>
+				<li>Language evolution</li>
+				<li>Maturity</li>
+				<li>Expected tendency</li>
+			</ul>
+		</div>
+	</div>
+	
+<!--	
+	<div class="step slide" data-x="3927.87495443346" data-y="2305.80903081844" data-z="1512.46435654639" data-rotate-z="6.49525618460029" data-rotate-x="16.8790565435775" data-rotate-y="25.3796239066869" data-scale="1">
+		<div class="slide-title"><img src="img/iD_logo.png" alt="iD logo" class="rounded_icon" /> iD con Bing de fondo</div>
+		<img src="img/OSM_editors_iD.png" alt="iD OpenStreetMap editor" class="img_back maxed_height" />
+	</div>
+
+	<div class="step slide" data-x="2213.15142621915" data-y="3333.11656414939" data-z="1656.50858097938" data-rotate-z="7.50608051475137" data-rotate-x="21.1318134879693" data-rotate-y="-8.98737504752353" data-scale="1">
+		<div class="slide-title"><img src="img/JOSM_logo.png" alt="JOSM logo" class="rounded_icon" /> JOSM con el Catastro de fondo</div>
+		<img src="img/OSM_editors_JOSM_catastro.png" alt="JOSM OpenStreetMap editor" class="img_back maxed_height" />
+	</div>
+
+	<div class="step slide" data-x="78.47915549872" data-y="3686.97244662991" data-z="1800.55280541237" data-rotate-z="-23.8104193070903" data-rotate-x="-24.8361111008562" data-rotate-y="26.7699735872447" data-scale="1">
+		<div class="slide-title"><img src="img/JOSM_logo.png" alt="JOSM logo" class="rounded_icon" /> JOSM con PNOA de fondo</div>
+		<img src="img/OSM_editors_JOSM_PNOA.png" alt="JOSM OpenStreetMap editor" class="img_back maxed_height" />
+	</div>
+
+	<div class="step slide" data-x="-2043.00227311229" data-y="3287.00464928949" data-z="1944.59702984536" data-rotate-z="-15.3558552651666" data-rotate-x="22.5376631850377" data-rotate-y="26.9341002744623" data-scale="1">
+		<div class="subtitle">
+			<p>OpenStreetMap para desarrolladores</p>
+			<br />
+			<center><img src="img/gifs/developer.gif" alt="OpenStreetMap logo" class="maxed_height" /></center>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="-3705.18181656539" data-y="2207.71907639028" data-z="2088.64125427835" data-rotate-z="-25.9288704874925" data-rotate-x="25.6783773531206" data-rotate-y="-25.1533294818364" data-scale="1">
+		<div class="slide-title">Diagrama de Componentes</div>
+		<div class="slide-content">
+			<img src="img/OSM_Components.png" alt="OpenStreetMap Components" class="img_back maxed_height" />
+			<div class="source">
+				<p>Fuente: <a href="http://wiki.openstreetmap.org/wiki/Component_overview">OSM Components overview</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="-4542.80503685991" data-y="672.660826074852" data-z="2232.68547871134" data-rotate-z="20.9954813467339" data-rotate-x="-26.2787549053319" data-rotate-y="1.25519325211644" data-scale="1">
+		<div class="slide-title"><img src="img/osm_logo.png" alt="OpenStreetMap logo" class="rounded_icon" /> La API de OpenStreetMap</div>
+		<div class="slide-content">
+			<br />
+			<ul class="lv0_indent">
+				<li>Es el único medio para <em>modificar</em> los datos de OSM</li>
+				<br />
+				<li>No está enfocada a consulta, sino a edición</li>
+				<br />
+				<li>Lleva en la versión <em>v0.6</em> desde 2009</li>
+				<br />
+				<li>Es <em>RESTful</em> y soporta versionado</li>
+				<br />
+				<li>Permite las <em>consultas anónimas</em>, y soporta <em>OAuth</em> para las actualizaciones de datos</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="step slide" data-x="-4357.04617508943" data-y="-983.833759073637" data-z="2376.72970314433" data-rotate-z="18.2080940818414" data-rotate-x="11.5716164242476" data-rotate-y="-0.62956475559622" data-scale="1">
+		<div class="slide-title">Ejemplo de Nodo - Teatro Galileo</div>
+		<div class="slide-content">
+			<img src="img/OSM_node_teatro_galileo.png" alt="OpenStreetMap - Nodo Teatro Galileo" class="maxed_height" />
+			<div class="source">
+				<p>Fuente: <a href="https://www.openstreetmap.org/api/0.6/node/3536931746">https://www.openstreetmap.org/api/0.6/node/3536931746</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="-3173.44758381878" data-y="-2383.40545129882" data-z="2520.77392757732" data-rotate-z="-23.1824663411826" data-rotate-x="-10.3287566774525" data-rotate-y="4.33019399922341" data-scale="1">
+		<div class="slide-title">Ejemplo de Vía - Calle Galileo</div>
+		<div class="slide-content">
+			<img src="img/OSM_way_calle_galileo.png" alt="OpenStreetMap - Vía Calle Galileo" class="maxed_height" />
+			<div class="source">
+				<p>Fuente: <a href="https://www.openstreetmap.org/api/0.6/way/4321666">https://www.openstreetmap.org/api/0.6/way/4321666</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="-1255.35369631957" data-y="-3188.35156041416" data-z="2664.81815201031" data-rotate-z="-15.9898194260895" data-rotate-x="2.08725829236209" data-rotate-y="15.8608936895616" data-scale="1">
+		<div class="slide-title">Ejemplo de Relación - Restricción de giro</div>
+		<div class="slide-content">
+			<img src="img/OSM_relation_restriction.png" alt="OpenStreetMap - Restricción de giro" class="maxed_height" />
+			<div class="source">
+				<p>Fuente: <a href="https://www.openstreetmap.org/api/0.6/relation/3407901">https://www.openstreetmap.org/api/0.6/relation/3407901</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="937.46040145183" data-y="-3187.62117277944" data-z="2808.8623764433" data-rotate-z="-0.340974274557084" data-rotate-x="-4.50359580712393" data-rotate-y="-26.8472649478354" data-scale="1">
+		<div class="slide-title"><img src="img/osm_logo.png" alt="OpenStreetMap logo" class="rounded_icon" /> Servicios para añadir teselas de OSM</div>
+		<div class="slide-content">
+			<p>Hay varios proyectos para insertar teselas de OSM en nuestra web. Los más destacados son:</p>
+			<br />
+			<ul class="lv0_indent">
+				<li><em>OpenLayers 2</em></li>
+				<ul class="lv1_indent">
+					<li><a href="http://openlayers.org/">http://openlayers.org/</a></li>
+					<li>Libreria amplia y madura</li>
+					<li>Gran soporte de protocolos y formatos, pero no optimizada para móvil</li>
+				</ul>
+				<li><em>OpenLayers 3</em></li>
+				<ul class="lv1_indent">
+					<li><a href="http://ol3js.org/">http://ol3js.org/</a></li>
+					<li>Refactorización completa, usando canvas y WebGL</li>
+					<li>Optimizada para móviles</li>
+					<li>Personalizar la GUI es más sencillo</li>
+				</ul>
+				<li><em>Leaflet</em></li>
+				<ul class="lv1_indent">
+					<li><a href="http://leafletjs.com/">http://leafletjs.com/</a></li>
+					<li>Librería pequeña y rápida</li>
+					<li>Óptima para móviles</li>
+					<li>Plugins de terceros</li>
+				</ul>
+			</ul>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="2844.84501214211" data-y="-2363.69529715514" data-z="2952.90660087629" data-rotate-z="-19.6163952467032" data-rotate-x="17.5059365420602" data-rotate-y="-18.1946845790371" data-scale="1">
+		<div class="slide-title"><img src="img/osm_logo.png" alt="OpenStreetMap logo" class="rounded_icon" /> Servicios derivados de la Base de Datos</div>
+		<div class="slide-content">
+			<ul class="lv0_indent">
+				<li>El principal producto derivado es el <a href="http://planet.openstreetmap.org/"><em>Planet</em></a></li>
+				<ul class="lv1_indent">
+					<li>Toda la base de datos (33 Gb aprox) en un XML comprimido</li>
+					<li>Actualizaciones incrementales por semana, día, hora y minuto</li>
+				</ul>
+				<li><a href="http://www.overpass-api.de/">Overpass API</a></li>
+				<ul class="lv1_indent">
+					<li>Está indicada para todo tipo de consultas</li>
+					<li>Tiene una interfaz propia para definir consultas: <a href="http://overpass-turbo.eu/">Overpass Turbo</a></li>
+				</ul>
+				<li><a href="https://taginfo.openstreetmap.org/">taginfo</a></li>
+				<ul class="lv1_indent">
+					<li>API para estadísticas de uso de etiquetas</li>
+				</ul>
+				<li><a href="http://nominatim.openstreetmap.org/">Nominatim</a></li>
+				<ul class="lv1_indent">
+					<li>Servicio geocodificador</li>
+				</ul>
+				<li><a href="http://project-osrm.org/">Open Source Routing Machine (OSRM)</a></li>
+				<ul class="lv1_indent">
+					<li>Motor de rutas basado en OSM, libre y open source</li>
+				</ul>
+				<li>OSM y GIS</li>
+				<ul class="lv1_indent">
+					<li><a href="http://wiki.openstreetmap.org/wiki/Osm2pgsql">Osm2pgsql</a> permite convertir los datos OSM a otros formatos GIS (shp) o Postgres/PostGIS</li>
+					<li><a href="http://wiki.openstreetmap.org/wiki/QGIS">QGIS</a> permite trabajar directamente con el formato OSM</li>
+				</ul>
+			</ul>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="3943.67243683444" data-y="-919.706537118049" data-z="3096.95082530928" data-rotate-z="-26.4472692925483" data-rotate-x="12.4836218878627" data-rotate-y="20.7654239544645" data-scale="1">
+		<div class="slide-title">Farmacias a <100m de un hospital</div>
+		<div class="slide-content">
+			<img src="img/Overpass_Turbo_example.png" alt="Overpass Turbo example" class="img_back maxed_height" />
+			<div class="source">
+				<p>Fuente: <a href="http://overpass-turbo.eu/s/9Vg">http://overpass-turbo.eu/s/9Vg</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="3899.21653308501" data-y="749.16217664672" data-z="3240.99504974227" data-rotate-z="-23.082382469438" data-rotate-x="0.791785498615354" data-rotate-y="-14.2645544931293" data-scale="1">
+		<div class="subtitle">
+			<p>¿A quién no le gustan los mapas?</p>
+			<br />
+			<center><img src="img/gifs/nervous_minions.gif" alt="Nervous minions" class="maxed_height" /></center>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="2691.3818308391" data-y="2145.62766966177" data-z="3385.03927417526" data-rotate-z="-15.4961269092746" data-rotate-x="-7.97058644425124" data-rotate-y="24.5670529897325" data-scale="1">
+		<div class="slide-title">Estilo Oficial</div>
+		<div class="slide-content">
+			<img src="img/almeria-01-standard.png" alt="Almería en OpenStreetMap" class="img_back maxed_height" />
+			<div class="source">
+				<p>Fuente: <a href="http://www.openstreetmap.org/#map=16/36.8343/-2.4619">http://www.openstreetmap.org/#map=16/36.8343/-2.4619</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="671.047118483162" data-y="2811.46238299049" data-z="3529.08349860825" data-rotate-z="-9.28552992548794" data-rotate-x="5.78598595457152" data-rotate-y="26.1230196179822" data-scale="1">
+		<div class="slide-title">Ciclismo</div>
+		<div class="slide-content">
+			<img src="img/almeria-02-cycle.png" alt="Almería en OpenStreetMap" class="img_back maxed_height" />
+			<div class="source">
+				<p>Fuente: <a href="http://www.openstreetmap.org/#map=16/36.8343/-2.4619&layers=C">http://www.openstreetmap.org/#map=16/36.8343/-2.4619&layers=C</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="-1493.14657110959" data-y="2490.18027157725" data-z="3673.12772304123" data-rotate-z="-22.107884649653" data-rotate-x="-22.405315708369" data-rotate-y="9.30546417413279" data-scale="1">
+		<div class="slide-title">Transporte</div>
+		<div class="slide-content">
+			<img src="img/almeria-03-transport.png" alt="Almería en OpenStreetMap" class="img_back maxed_height" />
+			<div class="source">
+				<p>Fuente: <a href="http://www.openstreetmap.org/#map=16/36.8343/-2.4619&layers=T">http://www.openstreetmap.org/#map=16/36.8343/-2.4619&layers=T</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="-2997.17308829512" data-y="1261.99038730489" data-z="3817.17194747422" data-rotate-z="-20.879191681277" data-rotate-x="-2.7415185989812" data-rotate-y="-9.78678046306595" data-scale="1">
+		<div class="slide-title">HOT</div>
+		<div class="slide-content">
+			<img src="img/almeria-04-hot.png" alt="Almería en OpenStreetMap" class="img_back maxed_height" />
+			<div class="source">
+				<p>Fuente: <a href="http://www.openstreetmap.org/#map=16/36.8343/-2.4619&layers=H">http://www.openstreetmap.org/#map=16/36.8343/-2.4619&layers=H</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="-3194.8252770023" data-y="-411.587639240025" data-z="3961.21617190722" data-rotate-z="-7.44535840395838" data-rotate-x="18.0530422423035" data-rotate-y="-2.17461325507611" data-scale="1">
+		<div class="slide-title">Midnight Commander</div>
+		<div class="slide-content">
+			<img src="img/almeria-05-midnight.png" alt="Almería en OpenStreetMap" class="img_back maxed_height" />
+			<div class="source">
+				<p>Fuente: <a href="http://maps.cloudmade.com/?lat=40.74742&lng=-73.987212&zoom=15&styleId=999&opened_tab=0">Cloudmade</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="-1928.23870757115" data-y="-1793.83998618768" data-z="4105.2603963402" data-rotate-z="-3.96172745525837" data-rotate-x="-0.276847874745727" data-rotate-y="12.0376247344539" data-scale="1">
+		<div class="slide-title">Pale Down</div>
+		<div class="slide-content">
+			<img src="img/almeria-06-pale.png" alt="Almería en OpenStreetMap" class="img_back maxed_height" />
+			<div class="source">
+				<p>Fuente: <a href="http://maps.cloudmade.com/?lat=40.74742&lng=-73.987212&zoom=15&styleId=998&opened_tab=0">Cloudmade</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="242.464520823755" data-y="-2159.97419617714" data-z="4249.30462077319" data-rotate-z="-23.5424855109304" data-rotate-x="-14.7689822791144" data-rotate-y="-3.76398463826627" data-scale="1">
+		<div class="slide-title">Freeline</div>
+		<div class="slide-content">
+			<img src="img/almeria-07-freeline.png" alt="Almería en OpenStreetMap" class="img_back maxed_height" />
+			<div class="source">
+				<p>Fuente: <a href="http://maps.cloudmade.com/?lat=40.74742&lng=-73.987212&zoom=15&styleId=2&opened_tab=0">Cloudmade</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="2102.25543160574" data-y="-1222.99999537775" data-z="4393.34884520618" data-rotate-z="21.8509192611091" data-rotate-x="-11.281244746875" data-rotate-y="19.7527767741121" data-scale="1">
+		<div class="slide-title">Watercolor</div>
+		<div class="slide-content">
+			<img src="img/almeria-09-watercolor.png" alt="Almería en OpenStreetMap" class="img_back maxed_height" />
+			<div class="source">
+				<p>Fuente: <a href="http://maps.stamen.com/watercolor/#15/36.8361/-2.4610">Stamen</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="2327.44487813779" data-y="471.922182585715" data-z="4537.39306963917" data-rotate-z="18.3888278380036" data-rotate-x="-7.22610739292577" data-rotate-y="-13.5604110709392" data-scale="1">
+		<div class="slide-title">Toner</div>
+		<div class="slide-content">
+			<img src="img/almeria-10-toner.png" alt="Almería en OpenStreetMap" class="img_back maxed_height" />
+			<div class="source">
+				<p>Fuente: <a href="http://maps.stamen.com/toner/#15/36.8361/-2.4610">Stamen</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="step slide" data-x="559.593885572523" data-y="1540.39274300875" data-z="4681.43729407216" data-rotate-z="-7.56913799559698" data-rotate-x="-23.1516094123945" data-rotate-y="-19.6381518049166" data-scale="1">
+		<div class="slide-title">Random</div>
+		<div class="slide-content">
+			<img src="img/almeria-12-random.png" alt="Almería en OpenStreetMap" class="img_back maxed_height" />
+			<div class="source">
+				<p>Fuente: <a href="https://a.tiles.mapbox.com/v3/saman.h6ek9086/page.html?secure=1#16/36.8332/-2.4610">Mapbox</a></p>
+			</div>
+		</div>
+	</div>
+-->
+
+	<div id="akwnoledgements" class="step slide" data-x="-1434.4139489535" data-y="694.317429582673" data-z="4825.48151850515" data-rotate-z="13.1447116937488" data-rotate-x="20.2984051387757" data-rotate-y="10.1146132377908" data-scale="1">
+		<div class="slide-title centered-title">Akwnoledgements</div>
+		<div class="slide-content">
+			<img src="img/gifs/thanks.gif" alt="Thanks" class="img_back fixed_height" />
+			<p>
+				<img src="img/thanks_icon.png" alt="Thanks to" class="rounded_icon" />
+				<a href="http://mreinhold.org/">Mark Reinhold</a>
+			</p>
+			<br />
+			<p>
+				<img src="img/thanks_icon.png" alt="Thanks to" class="rounded_icon" />
+				<a href="https://twitter.com/diacritica">Pablo Ruiz Múzquiz</a>
+			</p>
+			<br />
+			<p>
+				<img src="img/thanks_icon.png" alt="Thanks to" class="rounded_icon" />
+				<a href="https://twitter.com/esloho">Esther Lozano Hontecillas</a>
+			</p>
+		</div>
+	</div>
+
+	<div id="bibliography" class="step slide" data-x="-361.080087013332" data-y="-861.582076693321" data-z="4969.52574293814" data-rotate-z="-20.6349237319082" data-rotate-x="23.7821156736463" data-rotate-y="15.503124746494" data-scale="1">
+		<div class="slide-title centered-title">Bibliography</div>
+		<div class="slide-content">
+			<p class="bibliography">
+				<img src="img/information.png" alt="Link to article" class="small_rounded_icon" /> 
+				Lots of <a href="https://en.wikipedia.org/"><em>en.wikipedia.org</em></a> content :-)
+			</p>
+			<p class="bibliography">
+				<img src="img/information.png" alt="Link to article" class="small_rounded_icon" /> 
+				Official stuff: <a href="http://java.com/">java.com</a>, <a href="https://www.python.org/">python.org</a>, <a href="https://php.net/">php.net</a>, 
+				<a href="http://www.ruby-lang.org/">ruby-lang.org</a>, <a href="https://www.perl.org/">perl.org</a>, <a href="http://groovy-lang.org/">groovy-lang.org</a>, <a href="https://golang.org/">golang.org</a>, <a href="http://www.rust-lang.org/">rust-lang.org</a> and <a href="http://clojure.org/">clojure.org</a>
+			</p>
+			<p class="bibliography">
+				<img src="img/information.png" alt="Link to article" class="small_rounded_icon" /> 
+				<a href="https://fsfe.org/"><em>Free Software Foundation Europe</em></a>
+			</p>
+			<p class="bibliography">
+				<img src="img/information.png" alt="Link to article" class="small_rounded_icon" /> 
+				<a href="http://www.gnu.org/licenses/licenses.en.html"><em>gnu.org</em> software licenses and resources</a>
+			</p>
+			<p class="bibliography">
+				<img src="img/information.png" alt="Link to article" class="small_rounded_icon" /> 
+				<a href="http://choosealicense.com/">choosealicense.com</a> by <a href="http://github.com/">Github, Inc</a>
+			</p>
+			<p class="bibliography">
+				<img src="img/information.png" alt="Link to article" class="small_rounded_icon" /> 
+				<a href="http://incubator.apache.org/"><em>Apache Incubator</em></a>
+			</p>
+			<p class="bibliography">
+				<img src="img/information.png" alt="Link to article" class="small_rounded_icon" /> 
+				<a href="http://blogs.gartner.com/mark_driver/2014/10/02/gartner-programming-language-index-for-2014/"><em>Gartner</em> Programming Language Index for 2014</a>
+			</p>
+			<p class="bibliography">
+				<img src="img/information.png" alt="Link to article" class="small_rounded_icon" /> 
+				<a href="https://blogs.oracle.com/opal/entry/the_mysterious_php_rfc_process">The Mysterious PHP RFC Process</a>
+			</p>
+			<!--
+			<p class="bibliography">
+				<img src="img/information.png" alt="Link to article" class="small_rounded_icon" /> 
+				<a href="">Article</a>
+			</p>
+			<p class="bibliography">
+				<img src="img/information.png" alt="Link to article" class="small_rounded_icon" /> 
+				<a href="">Article</a>
+			</p>
+			-->
+		</div>
+	</div>
+
+	<div id="thanks" class="step slide" data-x="22.6150850743106" data-y="15.7768628839531" data-z="5113.56996737113" data-rotate-z="20.8509164499119" data-rotate-x="-26.6010556742549" data-rotate-y="4.60054003586993" data-scale="1">
+		<div class="title"><h2>Ask me anything !!</h2></div>
+		<img src="img/gifs/thank_you.gif" alt="Thank you" style="max-height:35%" class="img_back maxed_height" />
+		<div class="subtitle">
+			<p>Luis García Castro - @luiyo</p>
+			<p id="creativeCommons">
+				<img src="img/creative-commons.png" alt="Creative Commons" class="rounded_icon" />
+				<a href="http://creativecommons.org/licenses/by-sa/3.0/es/">
+					<span class="footer"><i>Creative Commons <em>CC-BY-SA</em></i></span>
+				</a>
+			</p>
+		</div>
+		<div class="caption">
+		</div>
+	</div>
 
 </div>
 
-<!--
-    
-    Hint is not related to impress.js in any way.
-    
-    But it can show you how to use impress.js features in creative way.
-    
-    When the presentation step is shown (selected) its element gets the class of "active" and the body element
-    gets the class based on active step id `impress-on-ID` (where ID is the step's id)... It may not be
-    so clear because of all these "ids" in previous sentence, so for example when the first step (the one with
-    the id of `bored`) is active, body element gets a class of `impress-on-bored`.
-    
-    This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation when
-    the first step of presentation is visible for a couple of seconds.
-    
-    ...
-    
-    And when it comes to this piece of JavaScript below ... kids, don't do this at home ;)
-    It's just a quick and dirty workaround to get different hint text for touch devices.
-    In a real world it should be at least placed in separate JS file ... and the touch content should be
-    probably just hidden somewhere in HTML - not hard-coded in the script.
-    
-    Just sayin' ;)
-    
--->
-<div class="hint">
-    <p>Use a spacebar or arrow keys to navigate</p>
-</div>
-<script>
-if ("ontouchstart" in document.documentElement) { 
-    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
-}
-</script>
-
-<!--
-    
-    Last, but not least.
-    
-    To make all described above really work, you need to include impress.js in the page.
-    I strongly encourage to minify it first.
-    
-    In here I just include full source of the script to make it more readable.
-    
-    You also need to call a `impress().init()` function to initialize impress.js presentation.
-    And you should do it in the end of your document. Not only because it's a good practice, but also
-    because it should be done when the whole document is ready.
-    Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
-    
--->
 <script src="js/impress.js"></script>
-<script>impress().init();</script>
-
-<!--
-    
-    The `impress()` function also gives you access to the API that controls the presentation.
-    
-    Just store the result of the call:
-    
-        var api = impress();
-    
-    and you will get three functions you can call:
-    
-        `api.init()` - initializes the presentation,
-        `api.next()` - moves to next step of the presentation,
-        `api.prev()` - moves to previous step of the presentation,
-        `api.goto( idx | id | element, [duration] )` - moves the presentation to the step given by its index number
-                id or the DOM element; second parameter can be used to define duration of the transition in ms,
-                but it's optional - if not provided default transition duration for the presentation will be used.
-    
-    You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
-    Don't worry, it wont initialize the presentation again.
-    
-    For some example uses of this API check the last part of the source of impress.js where the API
-    is used in event handlers.
-    
--->
+<script src="js/impressConsole.js"></script>
+<script>
+	impress().init();
+	impressConsole().init(css="css/impressConsole.css");
+	//impressConsole().open(); // If you want them to open automatically
+</script>
 
 </body>
 </html>
-
-<!--
-    
-    Now you know more or less everything you need to build your first impress.js presentation, but before
-    you start...
-    
-    Oh, you've already cloned the code from GitHub?
-    
-    You have it open in text editor?
-    
-    Stop right there!
-    
-    That's not how you create awesome presentations. This is only a code. Implementation of the idea that
-    first needs to grow in your mind.
-    
-    So if you want to build great presentation take a pencil and piece of paper. And turn off the computer.
-    
-    Sketch, draw and write. Brainstorm your ideas on a paper. Try to build a mind-map of what you'd like
-    to present. It will get you closer and closer to the layout you'll build later with impress.js.
-    
-    Get back to the code only when you have your presentation ready on a paper. It doesn't make sense to do
-    it earlier, because you'll only waste your time fighting with positioning of useless points.
-    
-    If you think I'm crazy, please put your hands on a book called "Presentation Zen". It's all about 
-    creating awesome and engaging presentations.
-    
-    Think about it. 'Cause impress.js may not help you, if you have nothing interesting to say.
-    
--->
-
-<!--
-    
-    Are you still reading this?
-    
-    For real?
-    
-    I'm impressed! Feel free to let me know that you got that far (I'm @bartaz on Twitter), 'cause I'd like
-    to congratulate you personally :)
-    
-    But you don't have to do it now. Take my advice and take some time off. Make yourself a cup of coffee, tea,
-    or anything you like to drink. And raise a glass for me ;)
-    
-    Cheers!
-    
--->
-
