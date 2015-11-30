@@ -1,7 +1,9 @@
-Governance in Programming Languages 
+Concerning Governance in Programming Languages 
 ====
 
-Technical Presentation (in English) about **Governance in Programming Languages** by [Luis García Castro](https://github.com/LuisGC)
+Presentation (in English) about **Concerning Governance in Programming Languages** by [Luis García Castro](https://github.com/LuisGC)
+
+View in GitHub-Pages: [Concerning Governance in Programming Languages] (https://luisgc.github.com/programming_languages_governance)
 
 # Content
 
