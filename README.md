@@ -1,4 +1,4 @@
-Concerning Governance in Programming Languages 
+Concerning Governance in Programming Languages
 ====
 
 Presentation (in English) about **Concerning Governance in Programming Languages** by [Luis García Castro](https://github.com/LuisGC)
@@ -22,7 +22,7 @@ View in GitHub-Pages: [Concerning Governance in Programming Languages] (https://
 
 * [impress.js](https://github.com/bartaz/impress.js) - An open source presentation framework based on the power of HTML5 and CSS3 transforms and transitions
 * [impress-console](https://github.com/regebro/impress-console) - module that provides a speaker console for impress.js presentations
-* [Graph / Tree Slide Generator](http://4quant.github.io/shiny-impress.js) - Uses the igraph library in R to generate optimally positioned graphs from given connectivities and generates a presentation from these results. A live version is available [here](https://4quant.shinyapps.io/gimpress/)
+* [Graph / Tree Slide Generator](http://4quantOSS.github.io/shiny-impress.js) - Uses the igraph library in R to generate optimally positioned graphs from given connectivities and generates a presentation from these results. A live version is available [here](https://4quant.shinyapps.io/gimpress/)
 
 # License
 
@@ -45,4 +45,3 @@ View in GitHub-Pages: [Concerning Governance in Programming Languages] (https://
 * [Apache Incubator] (http://incubator.apache.org/)
 * [Gartner Programming Language Index for 2014] (http://blogs.gartner.com/mark_driver/2014/10/02/gartner-programming-language-index-for-2014/)
 * [The Mysterious PHP RFC Process] (https://blogs.oracle.com/opal/entry/the_mysterious_php_rfc_process)
- 
